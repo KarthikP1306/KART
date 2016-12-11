@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script> 
+            <title>Vote UP or DOWN</title> 
+        </head>
+		
+        <body>
+        <h2>Vote(Task 2)</h2>
+        <div>
+		<label for="serveri"> Server: </label> <input type='text' name="up" id="up"/> 
+		<button onclick="save_data()" type="button" value="Save" id="Save">UP</button>
+		
+		<label for="serveri"> Server2: </label> <input type='text' name="down" id="down"/> 
+		<button onclick="save_data1()" type="button" value="Save" id="Save1">DOWN</button>
+		</div>
+		
+        <script>
+		
+			var save_button = document.getElementById('Save')
+			save_button.onclick = saveData;
+			
+			var save_button1 = document.getElementById('Save1')
+			save_button1.onclick = saveData1;
+			
+			function saveData(){
+			  var input = document.getElementById("up");
+			  localStorage.setItem("up", input.value);
+			  var storedValue = localStorage.getItem("up"); 
+			}
+			
+			function saveData1(){
+			  var input2=document.getElementById("down");
+			  localStorage.setItem("down",input2.value);
+			  var storedValue2 = localStorage.getItem("down");			  
+			}
+			localStorage.clear();
+		</script> 
+		</body>
+	</html>
